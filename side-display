@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+task_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+task_python="${SIDE_DISPLAY_PYTHON:-${XDG_DATA_HOME:-$HOME/.local/share}/omarchy-side-display/venv/bin/python}"
+if [[ ! -x "$task_python" ]]; then
+  echo "Side Display's Python environment is missing. Run ./install.sh first." >&2
+  exit 1
+fi
+cd "$task_root"
+export PYTHONDONTWRITEBYTECODE=1
+exec "$task_python" -m side_display.cli "$@"

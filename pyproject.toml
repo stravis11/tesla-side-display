@@ -1,0 +1,13 @@
+[project]
+name = "omarchy-side-display"
+version = "0.2.0"
+description = "WebRTC browser displays for Omarchy and Hyprland"
+requires-python = ">=3.13"
+dependencies = ["aiohttp==3.13.5", "aiortc==1.14.0", "numpy>=2.2,<3"]
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-asyncio>=1", "playwright>=1.55"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

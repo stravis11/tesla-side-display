@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Tesla Side Display · Omarchy</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main id="setup">
+    <div class="mark">▱</div>
+    <p class="eyebrow">OMARCHY / TESLA SIDE DISPLAY</p>
+    <h1>A little more room.</h1>
+    <p class="description">Turn this browser into another screen for your desktop.</p>
+    <form id="connect-form">
+      <label for="token">Connection code</label>
+      <input id="token" type="password" placeholder="Enter the 8-digit code from your laptop" autocomplete="off" required>
+      <label for="resolution">Display size</label>
+      <select id="resolution">
+        <option value="1600x900">1600 × 900 · balanced</option>
+        <option value="1280x720">1280 × 720 · lighter</option>
+        <option value="1920x1080">1920 × 1080 · detailed</option>
+        <option value="1920x1200">1920 × 1200 · tablet</option>
+        <option value="2560x1440">2560 × 1440 · large</option>
+      </select>
+      <button id="connect" type="submit">Connect display <span>↗</span></button>
+    </form>
+    <p id="status" role="status">Connect both devices to the same Wi-Fi or hotspot.</p>
+    <p class="note">Each browser gets its own extended display. Set its location in the laptop’s Tesla Side Display panel. Use in your car while parked.</p>
+  </main>
+  <section id="display" hidden>
+    <video id="video" autoplay playsinline muted tabindex="0" aria-label="Remote desktop"></video>
+    <nav id="toolbar" aria-label="Display controls">
+      <span id="connection-state">Connecting</span>
+      <button id="keyboard-toggle" type="button">Keyboard</button>
+      <button id="right-click" type="button">Right click</button>
+      <button id="fullscreen" type="button">Full screen</button>
+      <button id="disconnect" type="button">Disconnect</button>
+    </nav>
+    <form id="typing" hidden>
+      <input id="text-input" type="text" placeholder="Type here, then send" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <button type="submit">Send</button>
+      <button id="enter-key" type="button">Enter</button>
+      <button id="backspace-key" type="button">⌫</button>
+      <button id="escape-key" type="button">Esc</button>
+    </form>
+  </section>
+  <script type="module" src="/client.js?v=trickle-1"></script>
+</body>
+</html>
